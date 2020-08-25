@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1302869187 source:f:\users\puma\documents\unla\algoritmos y estructuras de datos\codeblocks\circulocilindro\cilindro.cpp
+	"Cilindro.h"
+
+1302869187 f:\users\puma\documents\unla\algoritmos y estructuras de datos\codeblocks\circulocilindro\cilindro.h
+	"Constantes.h"
+	"Circulo.h"
+
+1302791571 f:\users\puma\documents\unla\algoritmos y estructuras de datos\codeblocks\circulocilindro\constantes.h
+
+1302792363 f:\users\puma\documents\unla\algoritmos y estructuras de datos\codeblocks\circulocilindro\circulo.h
+	"Constantes.h"
+
+1302829273 source:f:\users\puma\documents\unla\algoritmos y estructuras de datos\codeblocks\circulocilindro\circulo.cpp
+	"Circulo.h"
+
+1493644375 source:f:\users\puma\documents\unla\algoritmos y estructuras de datos\codeblocks\circulocilindro\main.cpp
+	<iostream>
+	"Circulo.h"
+	"Cilindro.h"
+
