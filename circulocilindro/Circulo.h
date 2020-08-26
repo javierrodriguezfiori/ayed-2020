@@ -1,7 +1,9 @@
 #ifndef CIRCULO_H_INCLUDED
 #define CIRCULO_H_INCLUDED
-
 #include "Constantes.h"
+#include <string>
+
+using namespace std;
 
 /**
     Definición del Tipo de Dato para manejo de Circulos.
@@ -24,7 +26,7 @@
 */
 typedef struct  {
     float radio;
-    // Tengo que guardar el diámetro?
+    string color;
 } Circulo;
 
 /**
@@ -76,6 +78,31 @@ RETORNO:
     Devuelve el radio del círculo.
 */
 float getRadio(Circulo &circulo);
+
+/**
+PRE:
+    La instancia del TDA (circulo) debe haberse creado (crear) pero no debe estar destruida (destruir).
+POST:
+    El circulo queda con el nuevo color.
+ATRIBUTOS:
+    circulo: instancia sobre la cual se aplica la primitiva.
+    color: valor del color a asignar al circulo.
+RETORNO:
+    No aplica.
+*/
+void setColor(Circulo &circulo, string color);
+
+/**
+PRE:
+    La instancia del TDA (circulo) debe haberse creado (crear) pero no debe estar destruida (destruir).
+POST:
+    Devuelve el color del circulo.
+ATRIBUTOS:
+    circulo: instancia sobre la cual se aplica la primitiva.
+RETORNO:
+    Devuelve el color del círculo.
+*/
+string getColor(Circulo &circulo);
 
 /**
 PRE:

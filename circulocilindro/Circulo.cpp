@@ -40,7 +40,6 @@ RETORNO:
     No aplica.
 */
 void setRadio(Circulo &circulo, float radio){
-    // Agrego robustez aunque estoy protegido con la pre.
     if (radio > 0) {
         circulo.radio = radio;
     }
@@ -58,6 +57,35 @@ RETORNO:
 */
 float getRadio(Circulo &circulo){
     return circulo.radio;
+}
+
+/**
+PRE:
+    La instancia del TDA (circulo) debe haberse creado (crear) pero no debe estar destruida (destruir).
+POST:
+    El circulo queda con el nuevo color.
+ATRIBUTOS:
+    circulo: instancia sobre la cual se aplica la primitiva.
+    color: valor del color a asignar al circulo.
+RETORNO:
+    No aplica.
+*/
+void setColor(Circulo &circulo, string color){
+    circulo.color = color;
+}
+
+/**
+PRE:
+    La instancia del TDA (circulo) debe haberse creado (crear) pero no debe estar destruida (destruir).
+POST:
+    Devuelve el color del circulo.
+ATRIBUTOS:
+    circulo: instancia sobre la cual se aplica la primitiva.
+RETORNO:
+    Devuelve el color del círculo.
+*/
+string getColor(Circulo &circulo){
+    return circulo.color;
 }
 
 /**

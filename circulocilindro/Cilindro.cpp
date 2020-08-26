@@ -155,6 +155,20 @@ float getVolumen(Cilindro &cilindro){
 PRE:
     La instancia del TDA (cilindro) debe haberse creado (crear) pero no debe estar destruida (destruir).
 POST:
+    Devuelve el color del cilindro.
+ATRIBUTOS:
+    cilindro: instancia sobre la cual se aplica la primitiva.
+RETORNO:
+    Devuelve el color del cilindro.
+*/
+string getColor(Cilindro &cilindro){
+    return cilindro.base.color;
+}
+
+/**
+PRE:
+    La instancia del TDA (cilindro) debe haberse creado (crear) pero no debe estar destruida (destruir).
+POST:
     Devuelve el diámetro del cilindro.
 ATRIBUTOS:
     cilindro: instancia sobre la cual se aplica la primitiva.
