@@ -11,6 +11,7 @@ RETORNO:
     No aplica.
 */
 void constructor(Circulo &circulo){
+
     circulo.radio = 1;
 }
 

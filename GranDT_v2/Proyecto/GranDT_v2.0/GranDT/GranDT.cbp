@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GranDT" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/GranDT" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/GranDT" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Club.cpp" />
+		<Unit filename="Club.h" />
+		<Unit filename="Equipo.cpp" />
+		<Unit filename="Equipo.h" />
+		<Unit filename="Error.cpp" />
+		<Unit filename="Error.h" />
+		<Unit filename="Jugador.cpp" />
+		<Unit filename="Jugador.h" />
+		<Unit filename="ListaEquipos.cpp" />
+		<Unit filename="ListaEquipos.h" />
+		<Unit filename="ListaErrores.cpp" />
+		<Unit filename="ListaErrores.h" />
+		<Unit filename="ListaJugador.cpp" />
+		<Unit filename="ListaJugador.h" />
+		<Unit filename="ListaPuntajes.cpp" />
+		<Unit filename="ListaPuntajes.h" />
+		<Unit filename="ListaPuntajesEquipoPorFecha.cpp" />
+		<Unit filename="ListaPuntajesEquipoPorFecha.h" />
+		<Unit filename="ListaPuntajesPorFecha.cpp" />
+		<Unit filename="ListaPuntajesPorFecha.h" />
+		<Unit filename="ListaPuntajesTotal.cpp" />
+		<Unit filename="ListaPuntajesTotal.h" />
+		<Unit filename="Listaclubes.cpp" />
+		<Unit filename="Listaclubes.h" />
+		<Unit filename="Puntajes.cpp" />
+		<Unit filename="Puntajes.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

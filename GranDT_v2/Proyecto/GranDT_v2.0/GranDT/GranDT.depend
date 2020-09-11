@@ -1,0 +1,412 @@
+# depslib dependency file v1.0
+1497456544 source:c:\users\jose\desktop\grandt\club.cpp
+	"Club.h"
+
+1497456544 c:\users\jose\desktop\grandt\club.h
+	<cstring>
+	"ListaJugador.h"
+
+1497223918 c:\users\jose\desktop\grandt\listajugador.h
+	"Jugador.h"
+
+1497391445 c:\users\jose\desktop\grandt\jugador.h
+	<string>
+
+1497458924 source:c:\users\jose\desktop\grandt\equipo.cpp
+	"Equipo.h"
+
+1497459118 c:\users\jose\desktop\grandt\equipo.h
+	"ListaJugador.h"
+	<string>
+
+1497451566 source:c:\users\jose\desktop\grandt\error.cpp
+	"Error.h"
+	<string.h>
+	<stdio.h>
+	<fstream>
+
+1496508560 c:\users\jose\desktop\grandt\error.h
+	<string>
+
+1497391463 source:c:\users\jose\desktop\grandt\jugador.cpp
+	"Jugador.h"
+
+1497454500 source:c:\users\jose\desktop\grandt\listaclubes.cpp
+	"Listaclubes.h"
+
+1497454500 c:\users\jose\desktop\grandt\listaclubes.h
+	"Club.h"
+
+1496789967 source:c:\users\jose\desktop\grandt\listaequipos.cpp
+	"ListaEquipos.h"
+
+1497462663 c:\users\jose\desktop\grandt\listaequipos.h
+	"Equipo.h"
+
+1497454214 source:c:\users\jose\desktop\grandt\listaerrores.cpp
+	"ListaErrores.h"
+	<fstream>
+
+1497454194 c:\users\jose\desktop\grandt\listaerrores.h
+	"Error.h"
+
+1497224543 source:c:\users\jose\desktop\grandt\listajugador.cpp
+	"ListaJugador.h"
+
+1497223502 source:c:\users\jose\desktop\grandt\listapuntajes.cpp
+	"ListaPuntajes.h"
+
+1497227490 c:\users\jose\desktop\grandt\listapuntajes.h
+	"Puntajes.h"
+
+1497220503 c:\users\jose\desktop\grandt\puntajes.h
+
+1497404534 source:c:\users\jose\desktop\grandt\listapuntajestotal.cpp
+	"ListaPuntajesTotal.h"
+
+1497457690 c:\users\jose\desktop\grandt\listapuntajestotal.h
+
+1497392409 source:c:\users\jose\desktop\grandt\puntajes.cpp
+	"Puntajes.h"
+
+1497462590 source:c:\users\jose\desktop\grandt\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstring>
+	<cstdlib>
+	<stdio.h>
+	"Equipo.h"
+	"ListaEquipos.h"
+	"Club.h"
+	"Listaclubes.h"
+	"Jugador.h"
+	"ListaJugador.h"
+	"Puntajes.h"
+	"ListaPuntajes.h"
+	"ListaPuntajesTotal.h"
+	"Error.h"
+	"ListaErrores.h"
+
+1497446322 source:c:\users\jose\desktop\grandt\listapuntajesporfecha.cpp
+	"ListaPuntajesPorFecha.h"
+
+1497466459 c:\users\jose\desktop\grandt\listapuntajesporfecha.h
+	<string>
+
+1497469528 source:c:\users\jose\desktop\grandt\listapuntajesequipoporfecha.cpp
+	"ListaPuntajesEquipoPorFecha.h"
+
+1497471711 c:\users\jose\desktop\grandt\listapuntajesequipoporfecha.h
+	<string>
+
+1497456544 source:c:\users\javie\desktop\grandt\club.cpp
+	"Club.h"
+
+1497456544 c:\users\javie\desktop\grandt\club.h
+	<cstring>
+	"ListaJugador.h"
+
+1497223918 c:\users\javie\desktop\grandt\listajugador.h
+	"Jugador.h"
+
+1497391445 c:\users\javie\desktop\grandt\jugador.h
+	<string>
+
+1497458924 source:c:\users\javie\desktop\grandt\equipo.cpp
+	"Equipo.h"
+
+1497459118 c:\users\javie\desktop\grandt\equipo.h
+	"ListaJugador.h"
+	<string>
+
+1497451566 source:c:\users\javie\desktop\grandt\error.cpp
+	"Error.h"
+	<string.h>
+	<stdio.h>
+	<fstream>
+
+1496508560 c:\users\javie\desktop\grandt\error.h
+	<string>
+
+1497391463 source:c:\users\javie\desktop\grandt\jugador.cpp
+	"Jugador.h"
+
+1497454500 source:c:\users\javie\desktop\grandt\listaclubes.cpp
+	"Listaclubes.h"
+
+1497454500 c:\users\javie\desktop\grandt\listaclubes.h
+	"Club.h"
+
+1496789967 source:c:\users\javie\desktop\grandt\listaequipos.cpp
+	"ListaEquipos.h"
+
+1497462663 c:\users\javie\desktop\grandt\listaequipos.h
+	"Equipo.h"
+
+1497454214 source:c:\users\javie\desktop\grandt\listaerrores.cpp
+	"ListaErrores.h"
+	<fstream>
+
+1497454194 c:\users\javie\desktop\grandt\listaerrores.h
+	"Error.h"
+
+1497224543 source:c:\users\javie\desktop\grandt\listajugador.cpp
+	"ListaJugador.h"
+
+1497223502 source:c:\users\javie\desktop\grandt\listapuntajes.cpp
+	"ListaPuntajes.h"
+
+1497227490 c:\users\javie\desktop\grandt\listapuntajes.h
+	"Puntajes.h"
+
+1497220503 c:\users\javie\desktop\grandt\puntajes.h
+
+1497511499 source:c:\users\javie\desktop\grandt\listapuntajesequipoporfecha.cpp
+	"ListaPuntajesEquipoPorFecha.h"
+
+1497471711 c:\users\javie\desktop\grandt\listapuntajesequipoporfecha.h
+	<string>
+
+1497446322 source:c:\users\javie\desktop\grandt\listapuntajesporfecha.cpp
+	"ListaPuntajesPorFecha.h"
+
+1497466459 c:\users\javie\desktop\grandt\listapuntajesporfecha.h
+	<string>
+
+1497404534 source:c:\users\javie\desktop\grandt\listapuntajestotal.cpp
+	"ListaPuntajesTotal.h"
+
+1497457690 c:\users\javie\desktop\grandt\listapuntajestotal.h
+
+1497516541 source:c:\users\javie\desktop\grandt\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstring>
+	<cstdlib>
+	<stdio.h>
+	"Equipo.h"
+	"ListaEquipos.h"
+	"Club.h"
+	"Listaclubes.h"
+	"Jugador.h"
+	"ListaJugador.h"
+	"Puntajes.h"
+	"ListaPuntajes.h"
+	"ListaPuntajesTotal.h"
+	"Error.h"
+	"ListaErrores.h"
+	"ListaPuntajesEquipoPorFecha.h"
+
+1497392409 source:c:\users\javie\desktop\grandt\puntajes.cpp
+	"Puntajes.h"
+
+1497456544 source:c:\users\nicolas\desktop\grandt\club.cpp
+	"Club.h"
+
+1497456544 c:\users\nicolas\desktop\grandt\club.h
+	<cstring>
+	"ListaJugador.h"
+
+1497223918 c:\users\nicolas\desktop\grandt\listajugador.h
+	"Jugador.h"
+
+1497391445 c:\users\nicolas\desktop\grandt\jugador.h
+	<string>
+
+1497458924 source:c:\users\nicolas\desktop\grandt\equipo.cpp
+	"Equipo.h"
+
+1497459118 c:\users\nicolas\desktop\grandt\equipo.h
+	"ListaJugador.h"
+	<string>
+
+1497451566 source:c:\users\nicolas\desktop\grandt\error.cpp
+	"Error.h"
+	<string.h>
+	<stdio.h>
+	<fstream>
+
+1496508560 c:\users\nicolas\desktop\grandt\error.h
+	<string>
+
+1497391463 source:c:\users\nicolas\desktop\grandt\jugador.cpp
+	"Jugador.h"
+
+1497454500 source:c:\users\nicolas\desktop\grandt\listaclubes.cpp
+	"Listaclubes.h"
+
+1497454500 c:\users\nicolas\desktop\grandt\listaclubes.h
+	"Club.h"
+
+1496789967 source:c:\users\nicolas\desktop\grandt\listaequipos.cpp
+	"ListaEquipos.h"
+
+1497462663 c:\users\nicolas\desktop\grandt\listaequipos.h
+	"Equipo.h"
+
+1497454214 source:c:\users\nicolas\desktop\grandt\listaerrores.cpp
+	"ListaErrores.h"
+	<fstream>
+
+1497454194 c:\users\nicolas\desktop\grandt\listaerrores.h
+	"Error.h"
+
+1497224543 source:c:\users\nicolas\desktop\grandt\listajugador.cpp
+	"ListaJugador.h"
+
+1497223502 source:c:\users\nicolas\desktop\grandt\listapuntajes.cpp
+	"ListaPuntajes.h"
+
+1497227490 c:\users\nicolas\desktop\grandt\listapuntajes.h
+	"Puntajes.h"
+
+1497220503 c:\users\nicolas\desktop\grandt\puntajes.h
+
+1497511499 source:c:\users\nicolas\desktop\grandt\listapuntajesequipoporfecha.cpp
+	"ListaPuntajesEquipoPorFecha.h"
+
+1497471711 c:\users\nicolas\desktop\grandt\listapuntajesequipoporfecha.h
+	<string>
+
+1497446322 source:c:\users\nicolas\desktop\grandt\listapuntajesporfecha.cpp
+	"ListaPuntajesPorFecha.h"
+
+1497466459 c:\users\nicolas\desktop\grandt\listapuntajesporfecha.h
+	<string>
+
+1497404534 source:c:\users\nicolas\desktop\grandt\listapuntajestotal.cpp
+	"ListaPuntajesTotal.h"
+
+1497457690 c:\users\nicolas\desktop\grandt\listapuntajestotal.h
+
+1497527217 source:c:\users\nicolas\desktop\grandt\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstring>
+	<cstdlib>
+	<stdio.h>
+	"Equipo.h"
+	"ListaEquipos.h"
+	"Club.h"
+	"Listaclubes.h"
+	"Jugador.h"
+	"ListaJugador.h"
+	"Puntajes.h"
+	"ListaPuntajes.h"
+	"ListaPuntajesTotal.h"
+	"Error.h"
+	"ListaErrores.h"
+	"ListaPuntajesEquipoPorFecha.h"
+
+1497392409 source:c:\users\nicolas\desktop\grandt\puntajes.cpp
+	"Puntajes.h"
+
+1497456544 source:c:\users\jose\desktop\grandtnico\grandt\club.cpp
+	"Club.h"
+
+1497456544 c:\users\jose\desktop\grandtnico\grandt\club.h
+	<cstring>
+	"ListaJugador.h"
+
+1497223918 c:\users\jose\desktop\grandtnico\grandt\listajugador.h
+	"Jugador.h"
+
+1497391445 c:\users\jose\desktop\grandtnico\grandt\jugador.h
+	<string>
+
+1497542460 source:c:\users\jose\desktop\grandtnico\grandt\equipo.cpp
+	"Equipo.h"
+
+1497542181 c:\users\jose\desktop\grandtnico\grandt\equipo.h
+	"ListaJugador.h"
+	<string>
+
+1497451566 source:c:\users\jose\desktop\grandtnico\grandt\error.cpp
+	"Error.h"
+	<string.h>
+	<stdio.h>
+	<fstream>
+
+1497549101 c:\users\jose\desktop\grandtnico\grandt\error.h
+	<string>
+
+1497391463 source:c:\users\jose\desktop\grandtnico\grandt\jugador.cpp
+	"Jugador.h"
+
+1497454500 source:c:\users\jose\desktop\grandtnico\grandt\listaclubes.cpp
+	"Listaclubes.h"
+
+1497454500 c:\users\jose\desktop\grandtnico\grandt\listaclubes.h
+	"Club.h"
+
+1496789967 source:c:\users\jose\desktop\grandtnico\grandt\listaequipos.cpp
+	"ListaEquipos.h"
+
+1497462663 c:\users\jose\desktop\grandtnico\grandt\listaequipos.h
+	"Equipo.h"
+
+1497549101 source:c:\users\jose\desktop\grandtnico\grandt\listaerrores.cpp
+	"ListaErrores.h"
+	<fstream>
+
+1497488463 c:\users\jose\desktop\grandtnico\grandt\listaerrores.h
+	"Error.h"
+
+1497224543 source:c:\users\jose\desktop\grandtnico\grandt\listajugador.cpp
+	"ListaJugador.h"
+
+1497223502 source:c:\users\jose\desktop\grandtnico\grandt\listapuntajes.cpp
+	"ListaPuntajes.h"
+
+1497227490 c:\users\jose\desktop\grandtnico\grandt\listapuntajes.h
+	"Puntajes.h"
+
+1497220503 c:\users\jose\desktop\grandtnico\grandt\puntajes.h
+
+1497511499 source:c:\users\jose\desktop\grandtnico\grandt\listapuntajesequipoporfecha.cpp
+	"ListaPuntajesEquipoPorFecha.h"
+
+1497471711 c:\users\jose\desktop\grandtnico\grandt\listapuntajesequipoporfecha.h
+	<string>
+
+1497446322 source:c:\users\jose\desktop\grandtnico\grandt\listapuntajesporfecha.cpp
+	"ListaPuntajesPorFecha.h"
+
+1497466459 c:\users\jose\desktop\grandtnico\grandt\listapuntajesporfecha.h
+	<string>
+
+1497404534 source:c:\users\jose\desktop\grandtnico\grandt\listapuntajestotal.cpp
+	"ListaPuntajesTotal.h"
+
+1497457690 c:\users\jose\desktop\grandtnico\grandt\listapuntajestotal.h
+
+1497550140 source:c:\users\jose\desktop\grandtnico\grandt\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+	<cstring>
+	<cstdlib>
+	<stdio.h>
+	"Equipo.h"
+	"ListaEquipos.h"
+	"Club.h"
+	"Listaclubes.h"
+	"Jugador.h"
+	"ListaJugador.h"
+	"Puntajes.h"
+	"ListaPuntajes.h"
+	"ListaPuntajesTotal.h"
+	"Error.h"
+	"ListaErrores.h"
+	"ListaPuntajesEquipoPorFecha.h"
+
+1497392409 source:c:\users\jose\desktop\grandtnico\grandt\puntajes.cpp
+	"Puntajes.h"
+
