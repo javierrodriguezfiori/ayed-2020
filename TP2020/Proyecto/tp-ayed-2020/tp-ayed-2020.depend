@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1599951186 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.cpp
+1600202849 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.cpp
+	"ListaSucursal.h"
 
 1600127787 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\sucursal.cpp
 	"Sucursal.h"
@@ -7,7 +8,7 @@
 1600128022 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\sucursal.h
 	<string>
 
-1600128861 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\main.cpp
+1600204324 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\main.cpp
 	<iostream>
 	<fstream>
 	<string>

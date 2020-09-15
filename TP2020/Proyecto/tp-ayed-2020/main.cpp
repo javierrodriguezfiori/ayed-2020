@@ -11,7 +11,6 @@
 
 using namespace std;
 
-//CARGA ARCHIVO
 void leer_archivoDatos(ListaSucursal &sucursales);
 
 int main()
@@ -19,10 +18,12 @@ int main()
     //CARACTERES SPANISH
     setlocale(LC_ALL,"Spanish");
 
-    //CARGA ARCHIVO
-//    leer_archivoDatos(sucursales);
-
     //LISTAS
+    ListaSucursal sucursales;
+    crearLista(sucursales);
+
+    //CARGA ARCHIVO
+    leer_archivoDatos(sucursales);
 
     //MENU PRINCIPAL
     int opcion=8;
@@ -59,7 +60,7 @@ int main()
     return 0;
 }
 
-void leer_archivo(ListaSucursal &sucursales){
+void leer_archivoDatos(ListaSucursal &sucursales){
     Sucursal sucursal;
     crear(sucursal);
 
@@ -78,7 +79,7 @@ void leer_archivo(ListaSucursal &sucursales){
             setFacturacion(sucursal,atof(facturacion.c_str()));
             setMetros(sucursal,atof(metros.c_str()));
             setCasaMatriz(sucursal,atoi(casaMatriz.c_str()));
-//            adicionarFinal(sucursales,sucursal);
+            adicionarFinal(sucursales,sucursal);
         }
     }
     archivo.close();
