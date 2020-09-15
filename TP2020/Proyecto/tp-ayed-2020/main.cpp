@@ -25,30 +25,29 @@ int main()
     //LISTAS
 
     //MENU PRINCIPAL
-   int opcion=0;
+    int opcion=8;
 
-    while(opcion!=8){
+    while(opcion!=0){
         system("cls");
-        cout << "Menú principal" << endl << "-----------------------" << endl << "1- Ranking por facturación" << endl << "2- Ranking por cantidad de artículos" << endl << "3- Ranking de rendimiento por m2" << endl << "8- Volver" << endl << endl << "Ingrese una opción: ";
+        cout << "Menú principal" << endl << endl << "1- Ranking por facturación" << endl << "2- Ranking por cantidad de artículos" << endl << "3- Ranking de rendimiento por m2" << endl << endl << "0- Salir" << endl << endl << "Ingrese una opción: ";
         cin >> opcion;
-
         switch(opcion){
             case 1:
                 //Ranking por facturación
-
-                cout << endl << "-----------------------" << endl << "Ranking por facturación" << endl << endl;
+                system("cls");
+                cout << "Ranking por facturación" << endl << endl;
                 system("pause");
                 break;
             case 2:
                 //Ranking por cantidad de artículos
-
-                cout << endl << "-----------------------" << endl << "Ranking por cantidad de artículos" << endl << endl;
+                system("cls");
+                cout << "Ranking por cantidad de artículos" << endl << endl;
                 system("pause");
                 break;
             case 3:
                 //Ranking de rendimiento por m2
-
-                cout << endl << "-----------------------" << endl << "3- Ranking de rendimiento por m2" << endl << endl;
+                system("cls");
+                cout << "Ranking de rendimiento por m2" << endl << endl;
                 system("pause");
                 break;
             default:

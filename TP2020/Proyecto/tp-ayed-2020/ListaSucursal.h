@@ -7,17 +7,15 @@
 #define NULL    0
 #endif
 
-/* Tipo enumerado para realizar comparaciones */
 enum ResultadoComparacion {
   MAYOR,
   IGUAL,
   MENOR
 };
 
-/* Tipo de Estructura de los Nodos de la Lista. */
 struct NodoListaSucursal {
-    Sucursal dato; // dato almacenado
-    NodoListaSucursal* sgte; // puntero al siguiente nodo
+    Sucursal dato;
+    NodoListaSucursal* sgte;
 };
 
 /* Tipo de Puntero a los Nodos de la Lista, el cual se usa para recorrer
@@ -99,7 +97,7 @@ PtrNodoListaSucursal ultimo(ListaSucursal &lista);
   dato: elemento a adicionar al principio de la lista.
   return puntero al nodo adicionado.
 */
-PtrNodoListaSucursal adicionarPrincipio(ListaSucursal &lista, Sucursal sucursal);
+PtrNodoListaSucursal adicionarPrincipio(ListaSucursal &lista, Sucursal dato);
 
 /*
   pre: lista creada con crearLista().
@@ -113,7 +111,7 @@ PtrNodoListaSucursal adicionarPrincipio(ListaSucursal &lista, Sucursal sucursal)
   ptrNodo: puntero al nodo después del cual se quiere adicionar el dato.
   return: puntero al nodo adicionado.
 */
-PtrNodoListaSucursal adicionarDespues(ListaSucursal &lista, Sucursal sucursal, PtrNodoListaSucursal ptrNodo);
+PtrNodoListaSucursal adicionarDespues(ListaSucursal &lista, Sucursal dato, PtrNodoListaSucursal ptrNodo);
 
 /*
   pre: lista creada con crearLista().
@@ -123,7 +121,7 @@ PtrNodoListaSucursal adicionarDespues(ListaSucursal &lista, Sucursal sucursal, P
   dato: elemento a adicionar al final de la lista.
   return: puntero al nodo adicionado.
 */
-PtrNodoListaSucursal adicionarFinal(ListaSucursal &lista, Sucursal sucursal);
+PtrNodoListaSucursal adicionarFinal(ListaSucursal &lista, Sucursal dato);
 
 /*
   pre: lista creada con crearLista().
@@ -136,7 +134,7 @@ PtrNodoListaSucursal adicionarFinal(ListaSucursal &lista, Sucursal sucursal);
   ptrNodo: puntero al nodo antes del cual se quiere adicionar el dato.
   return: puntero al nodo adicionado.
 */
-PtrNodoListaSucursal adicionarAntes(ListaSucursal &lista, Sucursal sucursal, PtrNodoListaSucursal ptrNodo);
+PtrNodoListaSucursal adicionarAntes(ListaSucursal &lista, Sucursal dato, PtrNodoListaSucursal ptrNodo);
 
 /*
   pre: lista creada con crearLista(), no vacia. ptrNodo es distinto de finLista().
@@ -145,7 +143,7 @@ PtrNodoListaSucursal adicionarAntes(ListaSucursal &lista, Sucursal sucursal, Ptr
   dato: elemento a colocar.
   ptrNodo: puntero al nodo del cual se quiere colocar el dato.
 */
-void colocarDato(ListaSucursal &lista, Sucursal &sucursal, PtrNodoListaSucursal ptrNodo);
+void colocarDato(ListaSucursal &lista, Sucursal &dato, PtrNodoListaSucursal ptrNodo);
 
 /*
   pre: lista creada con crearLista(), no vacia. ptrNodo es distinto de finLista().
@@ -154,7 +152,7 @@ void colocarDato(ListaSucursal &lista, Sucursal &sucursal, PtrNodoListaSucursal 
   dato: elemento obtenido.
   ptrNodo: puntero al nodo del cual se quiere obtener el dato.
 */
-void obtenerDato(ListaSucursal &lista, Sucursal &sucursal, PtrNodoListaSucursal ptrNodo);
+void obtenerDato(ListaSucursal &lista, Sucursal &dato, PtrNodoListaSucursal ptrNodo);
 
 /*
   pre: lista creada con crearLista().
@@ -197,7 +195,7 @@ void eliminarLista(ListaSucursal &lista);
   dato: elemento a localizar.
   return: puntero al nodo localizado o finLista().
 */
-PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal sucursal);
+PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal dato);
 
 /*
   pre: lista fue creada con crearLista() y cargada con datos ordenados de
@@ -208,7 +206,7 @@ PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal sucursal);
   dato: elemento a insertar.
   return: puntero al nodo insertado.
 */
-PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal sucursal);
+PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal dato);
 
 /*
   pre: la lista fue creada con crearLista().
@@ -216,7 +214,7 @@ PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal sucursal);
   lista: lista sobre la cual se invoca la primitiva.
   dato: elemento a eliminar.
 */
-void eliminarDato(ListaSucursal &lista, Sucursal sucursal);
+void eliminarDato(ListaSucursal &lista, Sucursal dato);
 
 /*
   pre: la lista fue creada con crearLista().
