@@ -8,7 +8,7 @@
 1600128022 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\sucursal.h
 	<string>
 
-1600204324 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\main.cpp
+1600206340 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -19,6 +19,6 @@
 	"Sucursal.h"
 	"ListaSucursal.h"
 
-1600202338 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.h
+1600205131 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.h
 	"Sucursal.h"
 

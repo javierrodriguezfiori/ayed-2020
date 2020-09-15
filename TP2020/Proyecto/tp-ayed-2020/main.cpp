@@ -11,6 +11,7 @@
 
 using namespace std;
 
+void mostrar_lista(ListaSucursal &sucursales);
 void leer_archivoDatos(ListaSucursal &sucursales);
 
 int main()
@@ -30,7 +31,7 @@ int main()
 
     while(opcion!=0){
         system("cls");
-        cout << "Menú principal" << endl << endl << "1- Ranking por facturación" << endl << "2- Ranking por cantidad de artículos" << endl << "3- Ranking de rendimiento por m2" << endl << endl << "0- Salir" << endl << endl << "Ingrese una opción: ";
+        cout << "Menú principal" << endl << endl << "1- Ranking por facturación" << endl << "2- Ranking por cantidad de artículos" << endl << "3- Ranking de rendimiento por m2" << endl << "4- Lista de sucursales" << endl << endl << "0- Salir" << endl << endl << "Ingrese una opción: ";
         cin >> opcion;
         switch(opcion){
             case 1:
@@ -49,6 +50,13 @@ int main()
                 //Ranking de rendimiento por m2
                 system("cls");
                 cout << "Ranking de rendimiento por m2" << endl << endl;
+                system("pause");
+                break;
+            case 4:
+                //Mostrar lista de sucursales
+                system("cls");
+                cout << "Lista de sucursales" << endl << endl;
+                mostrar_lista(sucursales);
                 system("pause");
                 break;
             default:
@@ -83,6 +91,21 @@ void leer_archivoDatos(ListaSucursal &sucursales){
         }
     }
     archivo.close();
+    destruir(sucursal);
+}
 
+void mostrar_lista(ListaSucursal &sucursales){
+    PtrNodoListaSucursal cursor;
+    cursor=primero(sucursales);
+    Sucursal sucursal;
+    crear(sucursal);
+
+    while(cursor!=finLista()){
+        obtenerDato(sucursales,sucursal,cursor);
+        //IMPRIMIR DATO
+        cout << getId(sucursal) << "," << getProvincia(sucursal) << "," << getArticulos(sucursal) << "," << getFacturacion(sucursal)<< "," << getMetros(sucursal) << "," << getCasaMatriz(sucursal) << endl;
+        cursor=siguiente(sucursales,cursor);
+    }
+    cout << endl;
     destruir(sucursal);
 }

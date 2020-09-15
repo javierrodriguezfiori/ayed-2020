@@ -72,8 +72,7 @@ PtrNodoListaSucursal siguiente(ListaSucursal &lista, PtrNodoListaSucursal ptrNod
 /*
   pre: lista Creada con crearLista().
         ptrNodo es un puntero a un nodo de lista.
-  post: devuelve el puntero al nodo anterior del apuntado, o devuelve finLista si
-        ptrNodo apuntaba al primero o si lista esta vacia.
+  post: devuelve el puntero al nodo anterior del apuntado, o devuelve finLista si ptrNodo apuntaba al primero o si lista esta vacia.
   lista: lista sobre la cual se invoca la primitiva.
   prtNodo: puntero al nodo a partir del cual se requiere el anterior.
   return: puntero al nodo anterior.
@@ -83,7 +82,7 @@ PtrNodoListaSucursal anterior(ListaSucursal &lista, PtrNodoListaSucursal ptrNodo
 /*
   pre: lista creada con crearLista().
   post: devuelve el puntero al ultimo nodo de la lista, o devuelve finLista() si
-        si lista esta vacia.
+        lista esta vacia.
   lista: lista sobre la cual se invoca la primitiva.
   return: puntero al último nodo.
 */
