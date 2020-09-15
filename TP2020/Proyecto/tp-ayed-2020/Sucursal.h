@@ -1,9 +1,9 @@
 #ifndef SUCURSAL_H_INCLUDED
 #define SUCURSAL_H_INCLUDED
 
-#include string; // ?
+#include <string>
 
-using namespace std; // ?
+using namespace std;
 
 // Estructura
 typedef struct  {

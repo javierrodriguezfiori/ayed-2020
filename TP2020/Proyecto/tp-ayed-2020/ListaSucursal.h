@@ -1,7 +1,7 @@
 #ifndef LISTASUCURSAL_H_INCLUDED
 #define LISTASUCURSAL_H_INCLUDED
 
-#include Sucursal.h
+#include "Sucursal.h"
 
 #ifndef NULL
 #define NULL    0
@@ -197,7 +197,7 @@ void eliminarLista(ListaSucursal &lista);
   dato: elemento a localizar.
   return: puntero al nodo localizado o finLista().
 */
-PtrNodoListaJugador localizarDato(ListaSucursal &lista, Sucursal sucursal);
+PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal sucursal);
 
 /*
   pre: lista fue creada con crearLista() y cargada con datos ordenados de
@@ -208,7 +208,7 @@ PtrNodoListaJugador localizarDato(ListaSucursal &lista, Sucursal sucursal);
   dato: elemento a insertar.
   return: puntero al nodo insertado.
 */
-PtrNodoListaJugador insertarDato(ListaSucursal &lista, Sucursal sucursal);
+PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal sucursal);
 
 /*
   pre: la lista fue creada con crearLista().
