@@ -229,4 +229,5 @@ void reordenar(ListaSucursal &lista);
 */
 int longitud(ListaSucursal &lista);
 
+
 #endif // LISTASUCURSAL_H_INCLUDED

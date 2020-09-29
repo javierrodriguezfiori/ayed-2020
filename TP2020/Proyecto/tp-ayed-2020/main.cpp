@@ -77,7 +77,7 @@ void leer_archivoDatos(ListaSucursal &sucursales){
     ifstream archivo;
     archivo.open("Datos.txt",ios::in);
     if(archivo.fail()){
-        cout << "ERROR!: No se pudo abrir el archivo" << endl;
+        cout << endl << "ERROR!: No se pudo abrir el archivo" << endl;
     }
     else {
         while(getline(archivo,id,'-')&&getline(archivo,provincia,'-')&&getline(archivo,articulos,'-')&&getline(archivo,facturacion,'-')&&getline(archivo,metros,'-')&&getline(archivo,casaMatriz,'-')){
@@ -95,6 +95,9 @@ void leer_archivoDatos(ListaSucursal &sucursales){
 }
 
 void mostrar_lista(ListaSucursal &sucursales){
+    //Ordenar lista
+    reordenar(sucursales);
+
     PtrNodoListaSucursal cursor;
     cursor=primero(sucursales);
     Sucursal sucursal;
