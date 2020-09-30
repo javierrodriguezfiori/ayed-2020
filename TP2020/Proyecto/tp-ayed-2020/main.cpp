@@ -15,6 +15,7 @@ using namespace std;
 void mostrar_lista(ListaSucursal &sucursales);
 void leer_archivoDatos(ListaSucursal &sucursales);
 void rankingFacturacionPorProvincia(ListaSucursal &sucursales);
+void rankingFacturacion(ListaSucursal &sucursales);
 
 int main()
 {
@@ -42,7 +43,9 @@ int main()
             case 1:
                 //Ranking por facturación
                 system("cls");
-                cout << "Ranking por facturación" << endl << endl;
+                cout << "Ranking de sucursales por facturación (nacional)" << endl << endl;
+                rankingFacturacion(sucursales);
+                cout << "Ranking de sucursales por facturación (por provincia): " << endl << endl;
                 rankingFacturacionPorProvincia(sucursales);
                 system("pause");
                 break;
@@ -101,15 +104,10 @@ void leer_archivoDatos(ListaSucursal &sucursales){
 }
 
 void mostrar_lista(ListaSucursal &sucursales){
-    //Ordenar lista por facturacion
-    reordenar(sucursales);
-
     PtrNodoListaSucursal cursor;
     cursor=primero(sucursales);
     Sucursal sucursal;
     crear(sucursal);
-
-//    cout << "Cantidad de sucursales: " << longitud(sucursales) << endl << endl;
 
     while(cursor!=finLista()){
         obtenerDato(sucursales,sucursal,cursor);
@@ -172,9 +170,18 @@ void rankingFacturacionPorProvincia(ListaSucursal &sucursales){
         cout <<"Facturacion total (Provincia: " << provincia << "): " << facturacionTotal << endl;
         facturacionTotal=0;
         // Muestro la lista temporal de la provincia
+        reordenar(listaProvincia);
         mostrar_lista(listaProvincia);
         // Elimino la lista para volver a empezar hasta que se vacie la lista madre
         eliminarLista(listaProvincia);
     }
+}
 
+void rankingFacturacion(ListaSucursal &sucursales){
+    ListaSucursal listaTemporal;
+    crearLista(listaTemporal);
+    listaTemporal = copiarLista(sucursales);
+    reordenar(listaTemporal);
+    mostrar_lista(listaTemporal);
+    eliminarLista(listaTemporal);
 }
