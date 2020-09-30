@@ -229,5 +229,6 @@ void reordenar(ListaSucursal &lista);
 */
 int longitud(ListaSucursal &lista);
 
+ListaSucursal copiarLista(ListaSucursal &sucursales);
 
 #endif // LISTASUCURSAL_H_INCLUDED

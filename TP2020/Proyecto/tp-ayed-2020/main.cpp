@@ -11,22 +11,27 @@
 
 using namespace std;
 
+// Declaraciones
 void mostrar_lista(ListaSucursal &sucursales);
 void leer_archivoDatos(ListaSucursal &sucursales);
+void rankingFacturacionPorProvincia(ListaSucursal &sucursales);
 
 int main()
 {
-    //CARACTERES SPANISH
+    //Caracteres en español
     setlocale(LC_ALL,"Spanish");
 
-    //LISTAS
+    //Precision numerica de 2 decimales
+    cout << fixed << setprecision(2);
+
+    //Lista maestra
     ListaSucursal sucursales;
     crearLista(sucursales);
 
-    //CARGA ARCHIVO
+    //Lectura del archivo de datos
     leer_archivoDatos(sucursales);
 
-    //MENU PRINCIPAL
+    //Menu principal
     int opcion=8;
 
     while(opcion!=0){
@@ -38,6 +43,7 @@ int main()
                 //Ranking por facturación
                 system("cls");
                 cout << "Ranking por facturación" << endl << endl;
+                rankingFacturacionPorProvincia(sucursales);
                 system("pause");
                 break;
             case 2:
@@ -95,7 +101,7 @@ void leer_archivoDatos(ListaSucursal &sucursales){
 }
 
 void mostrar_lista(ListaSucursal &sucursales){
-    //Ordenar lista
+    //Ordenar lista por facturacion
     reordenar(sucursales);
 
     PtrNodoListaSucursal cursor;
@@ -103,12 +109,72 @@ void mostrar_lista(ListaSucursal &sucursales){
     Sucursal sucursal;
     crear(sucursal);
 
+//    cout << "Cantidad de sucursales: " << longitud(sucursales) << endl << endl;
+
     while(cursor!=finLista()){
         obtenerDato(sucursales,sucursal,cursor);
         //IMPRIMIR DATO
-        cout << getId(sucursal) << "," << getProvincia(sucursal) << "," << getArticulos(sucursal) << "," << getFacturacion(sucursal)<< "," << getMetros(sucursal) << "," << getCasaMatriz(sucursal) << endl;
+        cout << "Id: " << getId(sucursal) << ", "
+        << "Provincia: " << getProvincia(sucursal) << ", "
+        << "Artículos: " << getArticulos(sucursal) << ", "
+        << "Facturación: " << getFacturacion(sucursal) << ", "
+        << "Metros: " << getMetros(sucursal) << ", "
+        << "Casa matriz: " << getCasaMatriz(sucursal)
+        << endl;
         cursor=siguiente(sucursales,cursor);
     }
+
     cout << endl;
+
     destruir(sucursal);
+}
+
+void rankingFacturacionPorProvincia(ListaSucursal &sucursales){
+    // Puntero cursor para moverme por las listas
+    PtrNodoListaSucursal cursor;
+    // Sucursal temporal para guardar datos
+    Sucursal sucursal;
+    crear(sucursal);
+    // String para comparar provincias
+    string provincia = "";
+    // float para total por provincia
+    float facturacionTotal = 0;
+    // Lista madre duplicada de la original
+    ListaSucursal lista;
+    crearLista(lista);
+    lista = copiarLista(sucursales);
+
+    // Mientras la lista madre no este vacía
+    while(!listaVacia(lista)){
+        // Tomo como referencia de provincia el primer item de la lista
+        cursor = primero(lista);
+        obtenerDato(lista, sucursal, cursor);
+        provincia = getProvincia(sucursal);
+        // Creo la lista temporal para la provincia
+        ListaSucursal listaProvincia;
+        crearLista(listaProvincia);
+        // Recorro la lista temporal
+        while(cursor!=finLista()){
+            // Traigo el dato
+            obtenerDato(lista, sucursal, cursor);
+            // Comparo la provincia del dato con la de referencia
+            if(getProvincia(sucursal)==provincia){
+                // Agrego la sucursal a la sublista de la provincia
+                adicionarFinal(listaProvincia, sucursal);
+                facturacionTotal = facturacionTotal + getFacturacion(sucursal);
+                // Elimino el nodo para ir limpiando la lista madre
+                eliminarNodo(lista, cursor);
+            }
+            // Paso al siguiente nodo
+            cursor=siguiente(lista, cursor);
+        }
+        // Muestro la facturacion total en la provincia
+        cout <<"Facturacion total (Provincia: " << provincia << "): " << facturacionTotal << endl;
+        facturacionTotal=0;
+        // Muestro la lista temporal de la provincia
+        mostrar_lista(listaProvincia);
+        // Elimino la lista para volver a empezar hasta que se vacie la lista madre
+        eliminarLista(listaProvincia);
+    }
+
 }

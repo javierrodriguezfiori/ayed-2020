@@ -1,10 +1,10 @@
 #include "ListaSucursal.h"
 
 ResultadoComparacion compararDato(Sucursal dato1, Sucursal dato2) {
-    if (getId(dato1) > getId(dato2)) {
+    if (getFacturacion(dato1) < getFacturacion(dato2)) {
         return MAYOR;
     }
-    else if (getId(dato1) < getId(dato2)) {
+    else if (getFacturacion(dato1) > getFacturacion(dato2)) {
         return MENOR;
     }
     else {
@@ -217,4 +217,23 @@ int longitud(ListaSucursal &lista){
         ptrCursor = siguiente(lista,ptrCursor);
   }
   return longitudLista;
+}
+
+ListaSucursal copiarLista(ListaSucursal &sucursales){
+    ListaSucursal temp;
+    crearLista(temp);
+    Sucursal sucursal;
+    crear(sucursal);
+    PtrNodoListaSucursal cursor;
+    cursor = primero(sucursales);
+
+    while(cursor!=finLista()){
+        obtenerDato(sucursales,sucursal,cursor);
+        adicionarFinal(temp,sucursal);
+        cursor = siguiente(sucursales, cursor);
+    }
+
+    destruir(sucursal);
+
+    return temp;
 }
