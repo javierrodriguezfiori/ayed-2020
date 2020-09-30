@@ -1,14 +1,27 @@
 #include "ListaSucursal.h"
 
-ResultadoComparacion compararDato(Sucursal dato1, Sucursal dato2) {
-    if (getFacturacion(dato1) < getFacturacion(dato2)) {
+ResultadoComparacion compararDato(Sucursal dato1, Sucursal dato2, string tipoOrdenamiento) {
+    if (tipoOrdenamiento=="facturacion"){
+        if (getFacturacion(dato1) < getFacturacion(dato2)) {
         return MAYOR;
+        }
+        else if (getFacturacion(dato1) > getFacturacion(dato2)) {
+            return MENOR;
+        }
+        else {
+            return IGUAL;
+        }
     }
-    else if (getFacturacion(dato1) > getFacturacion(dato2)) {
-        return MENOR;
-    }
-    else {
-        return IGUAL;
+    else if (tipoOrdenamiento=="articulos"){
+      if (getArticulos(dato1) < getArticulos(dato2)) {
+        return MAYOR;
+        }
+        else if (getArticulos(dato1) > getArticulos(dato2)) {
+            return MENOR;
+        }
+        else {
+            return IGUAL;
+        }
     }
 }
 
@@ -145,7 +158,7 @@ void eliminarLista(ListaSucursal &lista) {
     eliminarNodo(lista,primero(lista));
 }
 
-PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal dato) {
+PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal dato, string tipoOrdenamiento) {
     bool encontrado = false;
     Sucursal datoCursor;
     PtrNodoListaSucursal ptrCursor = primero(lista);
@@ -154,7 +167,7 @@ PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal dato) {
     while ((ptrCursor != finLista()) && (! encontrado)) {
     /* obtiene el dato del nodo y lo compara */
     obtenerDato(lista,datoCursor,ptrCursor);
-    if (compararDato(datoCursor,dato) == IGUAL)
+    if (compararDato(datoCursor,dato,tipoOrdenamiento) == IGUAL)
       encontrado = true;
     else
       ptrCursor = siguiente(lista,ptrCursor);
@@ -165,7 +178,7 @@ PtrNodoListaSucursal localizarDato(ListaSucursal &lista, Sucursal dato) {
   return ptrCursor;
 }
 
-PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal dato) {
+PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal dato, string tipoOrdenamiento) {
   PtrNodoListaSucursal ptrPrevio = primero(lista);
   PtrNodoListaSucursal ptrCursor = primero(lista);
   PtrNodoListaSucursal ptrNuevoNodo;
@@ -174,7 +187,7 @@ PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal dato) {
   /* recorre la lista buscando el lugar de la inserción */
   while ((ptrCursor != finLista()) && (! ubicado)) {
     obtenerDato(lista,datoCursor,ptrCursor);
-    if (compararDato(datoCursor,dato) == MAYOR)
+    if (compararDato(datoCursor,dato,tipoOrdenamiento) == MAYOR)
       ubicado = true;
     else {
       ptrPrevio = ptrCursor;
@@ -188,22 +201,22 @@ PtrNodoListaSucursal insertarDato(ListaSucursal &lista, Sucursal dato) {
   return ptrNuevoNodo;
 }
 
-void eliminarDato(ListaSucursal &lista, Sucursal dato) {
+void eliminarDato(ListaSucursal &lista, Sucursal dato, string tipoOrdenamiento) {
   /* localiza el dato y luego lo elimina */
-  PtrNodoListaSucursal ptrNodo = localizarDato(lista,dato);
+  PtrNodoListaSucursal ptrNodo = localizarDato(lista,dato,tipoOrdenamiento);
   if (ptrNodo != finLista())
     eliminarNodo(lista,ptrNodo);
 }
 
-void reordenar(ListaSucursal &lista) {
+void reordenar(ListaSucursal &lista, string tipoOrdenamiento) {
   ListaSucursal temp = lista;
   PtrNodoListaSucursal ptrCursor = primero(temp);
   crearLista(lista);
   while ( ptrCursor != finLista() ) {
         Sucursal dato;
-        obtenerDato(temp,dato,ptrCursor);
-        insertarDato(lista,dato);
-        eliminarNodo(temp,ptrCursor);
+        obtenerDato(temp, dato, ptrCursor);
+        insertarDato(lista, dato, tipoOrdenamiento);
+        eliminarNodo(temp, ptrCursor);
         ptrCursor = primero(temp);
   }
   eliminarLista(temp);

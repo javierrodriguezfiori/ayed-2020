@@ -14,8 +14,10 @@ using namespace std;
 // Declaraciones
 void mostrar_lista(ListaSucursal &sucursales);
 void leer_archivoDatos(ListaSucursal &sucursales);
-void rankingFacturacionPorProvincia(ListaSucursal &sucursales);
 void rankingFacturacion(ListaSucursal &sucursales);
+void rankingFacturacionPorProvincia(ListaSucursal &sucursales);
+void rankingArticulos(ListaSucursal &sucursales);
+void rankingArticulosPorProvincia(ListaSucursal &sucursales);
 
 int main()
 {
@@ -52,7 +54,10 @@ int main()
             case 2:
                 //Ranking por cantidad de artículos
                 system("cls");
-                cout << "Ranking por cantidad de artículos" << endl << endl;
+                cout << "Ranking de sucursales por cantidad de artículos (nacional)" << endl << endl;
+                rankingArticulos(sucursales);
+                cout << "Ranking de sucursales por cantidad de artículos (por provincia): " << endl << endl;
+                rankingArticulosPorProvincia(sucursales);
                 system("pause");
                 break;
             case 3:
@@ -127,6 +132,15 @@ void mostrar_lista(ListaSucursal &sucursales){
     destruir(sucursal);
 }
 
+void rankingFacturacion(ListaSucursal &sucursales){
+    ListaSucursal listaTemporal;
+    crearLista(listaTemporal);
+    listaTemporal = copiarLista(sucursales);
+    reordenar(listaTemporal,"facturacion");
+    mostrar_lista(listaTemporal);
+    eliminarLista(listaTemporal);
+}
+
 void rankingFacturacionPorProvincia(ListaSucursal &sucursales){
     // Puntero cursor para moverme por las listas
     PtrNodoListaSucursal cursor;
@@ -170,18 +184,63 @@ void rankingFacturacionPorProvincia(ListaSucursal &sucursales){
         cout <<"Facturacion total (Provincia: " << provincia << "): " << facturacionTotal << endl;
         facturacionTotal=0;
         // Muestro la lista temporal de la provincia
-        reordenar(listaProvincia);
+        reordenar(listaProvincia,"facturacion");
         mostrar_lista(listaProvincia);
         // Elimino la lista para volver a empezar hasta que se vacie la lista madre
         eliminarLista(listaProvincia);
     }
 }
 
-void rankingFacturacion(ListaSucursal &sucursales){
+void rankingArticulos(ListaSucursal &sucursales){
     ListaSucursal listaTemporal;
     crearLista(listaTemporal);
     listaTemporal = copiarLista(sucursales);
-    reordenar(listaTemporal);
+    reordenar(listaTemporal,"articulos");
     mostrar_lista(listaTemporal);
     eliminarLista(listaTemporal);
+}
+
+void rankingArticulosPorProvincia(ListaSucursal &sucursales){
+    // Puntero cursor para moverme por las listas
+    PtrNodoListaSucursal cursor;
+    // Sucursal temporal para guardar datos
+    Sucursal sucursal;
+    crear(sucursal);
+    // String para comparar provincias
+    string provincia = "";
+    // Lista madre duplicada de la original
+    ListaSucursal lista;
+    crearLista(lista);
+    lista = copiarLista(sucursales);
+
+    // Mientras la lista madre no este vacía
+    while(!listaVacia(lista)){
+        // Tomo como referencia de provincia el primer item de la lista
+        cursor = primero(lista);
+        obtenerDato(lista, sucursal, cursor);
+        provincia = getProvincia(sucursal);
+        // Creo la lista temporal para la provincia
+        ListaSucursal listaProvincia;
+        crearLista(listaProvincia);
+        // Recorro la lista temporal
+        while(cursor!=finLista()){
+            // Traigo el dato
+            obtenerDato(lista, sucursal, cursor);
+            // Comparo la provincia del dato con la de referencia
+            if(getProvincia(sucursal)==provincia){
+                // Agrego la sucursal a la sublista de la provincia
+                adicionarFinal(listaProvincia, sucursal);
+                // Elimino el nodo para ir limpiando la lista madre
+                eliminarNodo(lista, cursor);
+            }
+            // Paso al siguiente nodo
+            cursor=siguiente(lista, cursor);
+        }
+        cout <<"Provincia: " << provincia << endl;
+        // Muestro la lista temporal de la provincia
+        reordenar(listaProvincia,"articulos");
+        mostrar_lista(listaProvincia);
+        // Elimino la lista para volver a empezar hasta que se vacie la lista madre
+        eliminarLista(listaProvincia);
+    }
 }

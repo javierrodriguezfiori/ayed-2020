@@ -220,7 +220,7 @@ void eliminarDato(ListaSucursal &lista, Sucursal dato);
   post: reordena la lista.
   lista: lista sobre la cual se invoca la primitiva.
 */
-void reordenar(ListaSucursal &lista);
+void reordenar(ListaSucursal &lista, string tipoOrdenamiento);
 
 /*
   pre: la lista fue creada con crearLista().
