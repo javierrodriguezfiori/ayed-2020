@@ -1,5 +1,0 @@
-1:El jugador no pertenece a un club existente.
-2:El jugador no pertenece a un club existente.
-3:El jugador no pertenece a un club existente.
-4:Valor total supera al maximo valor por equipo.
-5:El valor de Arqueros supera el valor permitido.
