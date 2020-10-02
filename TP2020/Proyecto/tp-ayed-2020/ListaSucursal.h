@@ -229,6 +229,11 @@ void reordenar(ListaSucursal &lista, string tipoOrdenamiento);
 */
 int longitud(ListaSucursal &lista);
 
+/*
+  pre: la lista fue creada con crearLista().
+  post: devuelve una nueva ListaSucursal con los datos de la original.
+  sucursales: lista sobre la cual se invoca la primitiva.
+*/
 ListaSucursal copiarLista(ListaSucursal &sucursales);
 
 #endif // LISTASUCURSAL_H_INCLUDED

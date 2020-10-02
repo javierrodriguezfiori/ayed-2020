@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1601450906 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.cpp
+1601455375 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.cpp
 	"ListaSucursal.h"
 
-1600127787 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\sucursal.cpp
+1601454367 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\sucursal.cpp
 	"Sucursal.h"
 
-1601443737 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\sucursal.h
+1601454314 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\sucursal.h
 	<string>
 
-1601451032 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\main.cpp
+1601654742 source:c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -19,7 +19,7 @@
 	"Sucursal.h"
 	"ListaSucursal.h"
 
-1601450766 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.h
+1601451531 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\listasucursal.h
 	"Sucursal.h"
 
 1601431383 c:\users\javie\github\ayed-2020\tp2020\proyecto\tp-ayed-2020\negocio.h

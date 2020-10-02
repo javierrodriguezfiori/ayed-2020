@@ -23,6 +23,17 @@ ResultadoComparacion compararDato(Sucursal dato1, Sucursal dato2, string tipoOrd
             return IGUAL;
         }
     }
+    else if (tipoOrdenamiento=="rendimiento"){
+      if (getRendimiento(dato1) < getRendimiento(dato2)) {
+        return MAYOR;
+        }
+        else if (getRendimiento(dato1) > getRendimiento(dato2)) {
+            return MENOR;
+        }
+        else {
+            return IGUAL;
+        }
+    }
 }
 
 void crearLista(ListaSucursal &lista) {

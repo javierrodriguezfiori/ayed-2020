@@ -18,6 +18,7 @@ void rankingFacturacion(ListaSucursal &sucursales);
 void rankingFacturacionPorProvincia(ListaSucursal &sucursales);
 void rankingArticulos(ListaSucursal &sucursales);
 void rankingArticulosPorProvincia(ListaSucursal &sucursales);
+void rankingRendimiento(ListaSucursal &sucursales);
 
 int main()
 {
@@ -63,7 +64,8 @@ int main()
             case 3:
                 //Ranking de rendimiento por m2
                 system("cls");
-                cout << "Ranking de rendimiento por m2" << endl << endl;
+                cout << "Ranking de casas matrices por rendimiento (facturación/m2)" << endl << endl;
+                rankingRendimiento(sucursales);
                 system("pause");
                 break;
             case 4:
@@ -122,7 +124,7 @@ void mostrar_lista(ListaSucursal &sucursales){
         << "Artículos: " << getArticulos(sucursal) << ", "
         << "Facturación: " << getFacturacion(sucursal) << ", "
         << "Metros: " << getMetros(sucursal) << ", "
-        << "Casa matriz: " << getCasaMatriz(sucursal)
+        << "Casa matriz: " << getCasaMatriz(sucursal) << ", "
         << endl;
         cursor=siguiente(sucursales,cursor);
     }
@@ -243,4 +245,71 @@ void rankingArticulosPorProvincia(ListaSucursal &sucursales){
         // Elimino la lista para volver a empezar hasta que se vacie la lista madre
         eliminarLista(listaProvincia);
     }
+}
+
+void rankingRendimiento(ListaSucursal &sucursales){
+    // Puntero cursor para moverme por las listas
+    PtrNodoListaSucursal cursor;
+    cursor = primero(sucursales);
+    PtrNodoListaSucursal cursorMatrices;
+    // Sucursal temporal para guardar datos
+    Sucursal sucursal;
+    crear(sucursal);
+
+    // Genero sublista de casas Matrices
+    int casaMatriz;
+    ListaSucursal listaMatrices;
+    crearLista(listaMatrices);
+    while(cursor != finLista()){
+        obtenerDato(sucursales, sucursal, cursor);
+        casaMatriz = getCasaMatriz(sucursal);
+        if(casaMatriz==0){
+            adicionarFinal(listaMatrices,sucursal);
+        }
+        cursor = siguiente(sucursales,cursor);
+    }
+
+    // Recorro la lista original buscando para sumar a las casa matrices
+    cursorMatrices = primero(listaMatrices);
+    Sucursal matriz;
+    crear(matriz);
+    while(cursorMatrices != finLista()){
+        obtenerDato(listaMatrices, matriz, cursorMatrices);
+//        cout << "Casa matriz Id: " << getId(matriz) << endl;
+        cursor = primero(sucursales);
+        while(cursor != finLista()){
+            obtenerDato(sucursales, sucursal, cursor);
+            if (getCasaMatriz(sucursal)==getId(matriz)){
+//                cout << "Facturacion original: " << getFacturacion(matriz) << endl;
+                setFacturacion(matriz, getFacturacion(matriz)+getFacturacion(sucursal));
+                setMetros(matriz, getMetros(matriz)+getMetros(sucursal));
+                colocarDato(listaMatrices, matriz, cursorMatrices);
+//                cout << "Facturacion nueva: " << getFacturacion(matriz) << endl;
+            }
+            cursor = siguiente(sucursales,cursor);
+        }
+        setRendimiento(matriz, getFacturacion(matriz)/getMetros(matriz));
+        colocarDato(listaMatrices, matriz, cursorMatrices);
+        cursorMatrices = siguiente(listaMatrices, cursorMatrices);
+    }
+    reordenar(listaMatrices,"rendimiento");
+
+    // Mostrar sucursales con rendimiento
+    cursor = primero(listaMatrices);
+    while(cursor!=finLista()){
+        obtenerDato(sucursales,sucursal,cursor);
+        //IMPRIMIR DATO
+        cout << "Id: " << getId(sucursal) << ", "
+        << "Provincia: " << getProvincia(sucursal) << ", "
+        << "Artículos: " << getArticulos(sucursal) << ", "
+        << "Facturación: " << getFacturacion(sucursal) << ", "
+        << "Metros: " << getMetros(sucursal) << ", "
+        << "Casa matriz: " << getCasaMatriz(sucursal) << ", "
+        << "Rendimiento: " << getRendimiento(sucursal)
+        << endl;
+        cursor=siguiente(sucursales,cursor);
+    }
+    cout << endl;
+    destruir(sucursal);
+    eliminarLista(listaMatrices);
 }

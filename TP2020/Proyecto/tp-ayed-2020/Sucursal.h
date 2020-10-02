@@ -13,6 +13,7 @@ typedef struct  {
     float facturacion;
     float metros;
     int casaMatriz;
+    double rendimiento;
 } Sucursal;
 
 // Constructor y destructor
@@ -26,6 +27,7 @@ void setArticulos(Sucursal &sucursal, int articulos);
 void setFacturacion(Sucursal &sucursal, float facturacion);
 void setMetros(Sucursal &sucursal, float metros);
 void setCasaMatriz(Sucursal &sucursal, int casaMatriz);
+void setRendimiento(Sucursal &sucursal, double rendimiento);
 
 // Getters
 int getId(Sucursal &sucursal);
@@ -34,5 +36,6 @@ int getArticulos(Sucursal &sucursal);
 float getFacturacion(Sucursal &sucursal);
 float getMetros(Sucursal &sucursal);
 int getCasaMatriz(Sucursal &sucursal);
+double getRendimiento(Sucursal &sucursal);
 
 #endif // SUCURSAL_H_INCLUDED

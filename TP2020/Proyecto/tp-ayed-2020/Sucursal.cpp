@@ -34,6 +34,9 @@ void setCasaMatriz(Sucursal &sucursal, int casaMatriz){
     sucursal.casaMatriz = casaMatriz;
 }
 
+void setRendimiento(Sucursal &sucursal, double rendimiento){
+    sucursal.rendimiento = rendimiento;
+}
 // Getters
 
 int getId(Sucursal &sucursal){
@@ -60,4 +63,6 @@ int getCasaMatriz(Sucursal &sucursal){
     return sucursal.casaMatriz;
 }
 
-
+double getRendimiento(Sucursal &sucursal){
+    return sucursal.rendimiento;
+}
