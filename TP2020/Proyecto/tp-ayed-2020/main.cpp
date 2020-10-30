@@ -46,32 +46,44 @@ int main()
             case 1:
                 //Ranking por facturación
                 system("cls");
-                cout << "Ranking de sucursales por facturación (nacional)" << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
+                cout << "                    Ranking de sucursales por facturación (nacional)" << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
                 rankingFacturacion(sucursales);
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
                 cout << "Ranking de sucursales por facturación (por provincia): " << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
                 rankingFacturacionPorProvincia(sucursales);
                 system("pause");
                 break;
             case 2:
                 //Ranking por cantidad de artículos
                 system("cls");
-                cout << "Ranking de sucursales por cantidad de artículos (nacional)" << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
+                cout << "                    Ranking de sucursales por cantidad de artículos (nacional)" << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
                 rankingArticulos(sucursales);
-                cout << "Ranking de sucursales por cantidad de artículos (por provincia): " << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
+                cout << "                    Ranking de sucursales por cantidad de artículos (por provincia): " << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
                 rankingArticulosPorProvincia(sucursales);
                 system("pause");
                 break;
             case 3:
                 //Ranking de rendimiento por m2
                 system("cls");
-                cout << "Ranking de casas matrices por rendimiento (facturación/m2)" << endl << endl;
+                cout << "----------------------------------------------------------------------------------------------------------" << endl << endl;
+                cout << "                    Ranking de casas matrices por rendimiento (facturación/m2)" << endl << endl;
+                cout << "----------------------------------------------------------------------------------------------------------" << endl << endl;
                 rankingRendimiento(sucursales);
                 system("pause");
                 break;
             case 4:
                 //Mostrar lista de sucursales
                 system("cls");
-                cout << "Lista de sucursales" << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
+                cout << "                    Lista de sucursales" << endl << endl;
+                cout << "-------------------------------------------------------------------------------------------" << endl << endl;
                 mostrar_lista(sucursales);
                 system("pause");
                 break;
@@ -116,16 +128,25 @@ void mostrar_lista(ListaSucursal &sucursales){
     Sucursal sucursal;
     crear(sucursal);
 
+    // Mostrar campos
+    cout << setw(5) << "ID" << "\t"
+    << setw(12) << "Provincia" << "\t"
+    << setw(10) << "Artículos" << "\t"
+    << setw(12) << "Facturación" << "\t"
+    << setw(10) << "Metros" << "\t"
+    << setw(10) << "Casa matriz" << endl << endl;
+
     while(cursor!=finLista()){
         obtenerDato(sucursales,sucursal,cursor);
         //IMPRIMIR DATO
-        cout << "Id: " << getId(sucursal) << ", "
-        << "Provincia: " << getProvincia(sucursal) << ", "
-        << "Artículos: " << getArticulos(sucursal) << ", "
-        << "Facturación: " << getFacturacion(sucursal) << ", "
-        << "Metros: " << getMetros(sucursal) << ", "
-        << "Casa matriz: " << getCasaMatriz(sucursal) << ", "
+        cout << setw(5) << getId(sucursal) << "\t"
+        << setw(12) << getProvincia(sucursal) << "\t"
+        << setw(10) << getArticulos(sucursal) << "\t"
+        << setw(12) << getFacturacion(sucursal) << "\t"
+        << setw(10) << getMetros(sucursal) << "\t"
+        << setw(10) << getCasaMatriz(sucursal) << "\t"
         << endl;
+
         cursor=siguiente(sucursales,cursor);
     }
 
@@ -183,7 +204,7 @@ void rankingFacturacionPorProvincia(ListaSucursal &sucursales){
             cursor=siguiente(lista, cursor);
         }
         // Muestro la facturacion total en la provincia
-        cout <<"Facturacion total (Provincia: " << provincia << "): " << facturacionTotal << endl;
+        cout << "Facturacion total de " << provincia << ": " << facturacionTotal << endl;
         facturacionTotal=0;
         // Muestro la lista temporal de la provincia
         reordenar(listaProvincia,"facturacion");
@@ -252,6 +273,7 @@ void rankingRendimiento(ListaSucursal &sucursales){
     PtrNodoListaSucursal cursor;
     cursor = primero(sucursales);
     PtrNodoListaSucursal cursorMatrices;
+
     // Sucursal temporal para guardar datos
     Sucursal sucursal;
     crear(sucursal);
@@ -275,16 +297,13 @@ void rankingRendimiento(ListaSucursal &sucursales){
     crear(matriz);
     while(cursorMatrices != finLista()){
         obtenerDato(listaMatrices, matriz, cursorMatrices);
-//        cout << "Casa matriz Id: " << getId(matriz) << endl;
         cursor = primero(sucursales);
         while(cursor != finLista()){
             obtenerDato(sucursales, sucursal, cursor);
             if (getCasaMatriz(sucursal)==getId(matriz)){
-//                cout << "Facturacion original: " << getFacturacion(matriz) << endl;
                 setFacturacion(matriz, getFacturacion(matriz)+getFacturacion(sucursal));
                 setMetros(matriz, getMetros(matriz)+getMetros(sucursal));
                 colocarDato(listaMatrices, matriz, cursorMatrices);
-//                cout << "Facturacion nueva: " << getFacturacion(matriz) << endl;
             }
             cursor = siguiente(sucursales,cursor);
         }
@@ -296,16 +315,27 @@ void rankingRendimiento(ListaSucursal &sucursales){
 
     // Mostrar sucursales con rendimiento
     cursor = primero(listaMatrices);
+
+    // Mostrar campos
+    cout << setw(5) << "ID" << "\t"
+    << setw(12) << "Provincia" << "\t"
+    << setw(10) << "Artículos" << "\t"
+    << setw(12) << "Facturación" << "\t"
+    << setw(10) << "Metros" << "\t"
+    << setw(10) << "Casa matriz" << "\t"
+    << setw(10) << "Rendimiento" << "\t"
+    << endl << endl;
+
     while(cursor!=finLista()){
         obtenerDato(sucursales,sucursal,cursor);
         //IMPRIMIR DATO
-        cout << "Id: " << getId(sucursal) << ", "
-        << "Provincia: " << getProvincia(sucursal) << ", "
-        << "Artículos: " << getArticulos(sucursal) << ", "
-        << "Facturación: " << getFacturacion(sucursal) << ", "
-        << "Metros: " << getMetros(sucursal) << ", "
-        << "Casa matriz: " << getCasaMatriz(sucursal) << ", "
-        << "Rendimiento: " << getRendimiento(sucursal)
+        cout << setw(5) << getId(sucursal) << "\t"
+        << setw(12) << getProvincia(sucursal) << "\t"
+        << setw(10) << getArticulos(sucursal) << "\t"
+        << setw(12) << getFacturacion(sucursal) << "\t"
+        << setw(10) << getMetros(sucursal) << "\t"
+        << setw(10) << getCasaMatriz(sucursal) << "\t"
+        << setw(10) << getRendimiento(sucursal) << "\t"
         << endl;
         cursor=siguiente(sucursales,cursor);
     }
